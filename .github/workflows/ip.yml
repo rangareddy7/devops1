@@ -1,0 +1,8 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get IP address
+        run: echo $(curl -sS https://api.ipify.org) > ip_address.txt
+      - name: Use IP address
+        run: echo "The runner IP address ip is $(cat ip_address.txt)"
